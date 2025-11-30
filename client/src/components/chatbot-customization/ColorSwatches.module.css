@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.label {
+  font-size: 12px;
+  font-weight: 500;
+  color: #6B7280;
+  text-transform: capitalize;
+}
+
+.swatchesWrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.swatches {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.swatch {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.swatch:hover {
+  transform: scale(1.1);
+}
+
+.swatch.selected {
+  border-color: #333;
+  box-shadow: 0 0 0 2px #FFFFFF, 0 0 0 4px #333;
+}
+
+.hexInput {
+  padding: 8px 12px;
+  border: 1px solid #E5E7EB;
+  border-radius: 20px;
+  font-size: 12px;
+  font-family: 'Courier New', monospace;
+  color: #333;
+  background-color: #F9FAFB;
+  transition: all 0.2s ease;
+  min-width: 100px;
+}
+
+.hexInput:focus {
+  outline: none;
+  border-color: #33475B;
+  background-color: #FFFFFF;
+}
+
+.hexInput::placeholder {
+  color: #9CA3AF;
+}

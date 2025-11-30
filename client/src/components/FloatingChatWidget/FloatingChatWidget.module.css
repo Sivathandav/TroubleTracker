@@ -1,0 +1,468 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Toast Preview - Above chat icon */
+.toastPreview {
+  position: fixed;
+  bottom: 90px;
+  right: 24px;
+  background-color: #FFFFFF;
+  border-radius: 0px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  border: none;
+  overflow: visible;
+  z-index: 1001;
+  animation: slideUp 0.3s ease;
+  width: 240px;
+  height: 100px;
+  max-width: 90vw;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.toastHeader {
+  position: relative;
+  height: 0;
+  background-color: #FFFFFF;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-top: 24px;
+}
+
+.toastAvatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: absolute;
+  top: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.toastCloseBtn {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: auto;
+  height: auto;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0;
+}
+
+.toastCloseBtn:hover {
+  opacity: 0.7;
+}
+
+.toastCloseIcon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+.toastContent {
+  padding: 10px 16px 12px 16px;
+  background-color: #FFFFFF;
+  text-align: left;
+  height: 66px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toastText {
+  font-size: 13px;
+  font-weight: 500;
+  color: #425B76;
+  line-height: 1.4;
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Floating Button - Uses Floating Action Button.png */
+.floatingButton {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  z-index: 1001;
+  border: none;
+  padding: 0;
+  overflow: hidden;
+}
+
+.floatingButton:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.chatIcon {
+  width: 100%;
+  height: 100%;
+  background-image: url('../../assets/images/Landing Page/Floating Action Button.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.closeIcon {
+  font-size: 32px;
+  color: #FFFFFF;
+  font-weight: 300;
+  background-color: #33475B;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Chat Widget Container - Reduced size */
+.chatWidget {
+  position: fixed;
+  bottom: 100px;
+  right: 24px;
+  width: 340px;
+  max-height: 480px;
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  border: 1px solid #E0E0E0;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  overflow: hidden;
+}
+
+/* Header with Avatar */
+.chatHeader {
+  padding: 16px 20px;
+  background-color: #33475B;
+  color: #FFFFFF;
+}
+
+.headerContent {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+
+.headerAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #FFFFFF;
+}
+
+.headerTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+.onlineIndicator {
+  width: 10px;
+  height: 10px;
+  background-color: #00D9A5;
+  border-radius: 50%;
+  border: 2px solid #FFFFFF;
+  position: absolute;
+  left: 30px;
+  bottom: 0;
+}
+
+/* Content */
+.chatContent {
+  flex: 1;
+  overflow-y: auto;
+  background-color: #EEEEEE;
+  padding: 12px 12px 0 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Welcome Bubble */
+.welcomeBubble {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 12px;
+}
+
+.welcomeMessage {
+  background-color: #FFFFFF;
+  padding: 10px 16px;
+  border-radius: 14px;
+  font-size: 14px;
+  color: #000000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+/* Form Wrapper with Avatar */
+.formWrapper {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.formAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 6px;
+}
+
+/* Contact Form - Wider than tall, compact */
+.contactForm {
+  flex: 1;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.welcomeText {
+  font-size: 14px;
+  font-weight: 700;
+  color: #000000;
+  margin: 0 0 4px 0;
+  line-height: 1.2;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border-bottom: 1px solid #E0E0E0;
+  padding-bottom: 6px;
+}
+
+.formGroup:last-of-type {
+  border-bottom: none;
+}
+
+.label {
+  font-size: 11px;
+  font-weight: 500;
+  color: #666666;
+}
+
+.input {
+  padding: 0;
+  font-size: 13px;
+  font-weight: 400;
+  font-family: 'Inter', sans-serif;
+  border: none;
+  background-color: transparent;
+  color: #000000;
+  outline: none;
+}
+
+.input::placeholder {
+  color: #999999;
+}
+
+.submitButton {
+  width: 100%;
+  padding: 10px 16px;
+  background-color: #215380;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-family: 'Inter', sans-serif;
+  margin-top: 2px;
+}
+
+.submitButton:hover:not(:disabled) {
+  background-color: #1a4266;
+}
+
+.submitButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.messagesContainer {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background-color: #EEEEEE;
+  min-height: 0;
+}
+
+.messagesContainer::-webkit-scrollbar {
+  width: 6px;
+}
+
+.messagesContainer::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.messagesContainer::-webkit-scrollbar-thumb {
+  background: #CCCCCC;
+  border-radius: 3px;
+}
+
+.message {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.userMessage {
+  flex-direction: row-reverse;
+}
+
+.teamMessage {
+  flex-direction: row;
+}
+
+.messageAvatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background-image: url('../../assets/images/UI/Chat Avatar.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.messageBubble {
+  max-width: 70%;
+  padding: 10px 14px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.userMessage .messageBubble {
+  background-color: #FFFFFF;
+  border: 1px solid #E0E0E0;
+}
+
+.teamMessage .messageBubble {
+  background-color: #FFFFFF;
+  border: 1px solid #E0E0E0;
+}
+
+.messageText {
+  font-size: 14px;
+  margin: 0;
+  line-height: 1.5;
+  word-wrap: break-word;
+  color: #000000;
+}
+
+.messageTime {
+  font-size: 11px;
+  color: #999999;
+  align-self: flex-end;
+}
+
+/* Message Form - Using message composer design */
+.messageForm {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  background-color: #FFFFFF;
+  border-top: 1px solid #E0E0E0;
+  flex-shrink: 0;
+  margin: 0;
+}
+
+.messageInput {
+  flex: 1;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+  border: none;
+  background-color: transparent;
+  color: #000000;
+}
+
+.messageInput:focus {
+  outline: none;
+}
+
+.messageInput::placeholder {
+  color: #A0AEC0;
+  font-size: 14px;
+}
+
+.sendButton {
+  width: 28px;
+  height: 28px;
+  background-color: transparent;
+  background-image: url('../../assets/images/ChatBot/Send.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.sendButton:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .chatWidget {
+    width: calc(100vw - 32px);
+    max-height: calc(100vh - 100px);
+    bottom: 16px;
+    right: 16px;
+  }
+
+  .floatingButton {
+    bottom: 16px;
+    right: 16px;
+  }
+
+  .contactForm {
+    margin: 12px;
+    padding: 20px 16px;
+  }
+}

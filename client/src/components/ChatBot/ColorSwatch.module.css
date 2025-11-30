@@ -1,0 +1,73 @@
+.swatchContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.presetColors {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.presetCircle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.presetCircle:hover {
+  transform: scale(1.1);
+}
+
+.presetCircle.active {
+  border-color: #184E7F;
+  box-shadow: 0 0 0 2px rgba(24, 78, 127, 0.2);
+}
+
+.customColorRow {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.colorPreview {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  border: 1px solid #E5E7EB;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.colorPreview:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hexInput {
+  flex: 1;
+  padding: 8px 10px;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  font-size: 13px;
+  font-family: 'Courier New', monospace;
+  background-color: #F5F5F5;
+  color: #1C1C1C;
+}
+
+.hexInput:focus {
+  outline: none;
+  border-color: #184E7F;
+  background-color: #FFFFFF;
+  box-shadow: 0 0 0 2px rgba(24, 78, 127, 0.1);
+}
+
+.hexInput::placeholder {
+  color: #999999;
+}

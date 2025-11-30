@@ -1,0 +1,834 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+.container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #F8F9FA;
+  font-family: 'Inter',-apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Sidebar - Same as other pages */
+.sidebar {
+  width: 70px;
+  background-color: #FFFFFF;
+  border-right: 1px solid #E5E7EB;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+  position: fixed;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  z-index: 100;
+}
+
+.sidebarHeader {
+  margin-bottom: 40px;
+}
+
+.sidebarLogo {
+  height: 28px;
+  width: auto;
+}
+
+.sidebarNav {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  align-items: center;
+  flex: 1;
+}
+
+.navItem {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  padding: 0;
+  font-size: 20px;
+}
+
+.navItem:hover {
+  background-color: #F3F4F6;
+}
+
+.navItem.active {
+  background-color: #184E7F;
+}
+
+.navItem.active .navIcon {
+  filter: brightness(0) invert(1);
+}
+
+.navIcon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.sidebarFooter {
+  margin-top: auto;
+}
+
+.logoutIcon {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  transition: all 0.2s ease;
+}
+
+.logoutIcon:hover {
+  background-color: #F3F4F6;
+}
+
+/* Main Content */
+.mainContent {
+  margin-left: 70px;
+  flex: 1;
+  padding: 32px 40px;
+  overflow-y: auto;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.headerIcon {
+  width: 32px;
+  height: 32px;
+}
+
+.pageTitle {
+  font-size: 28px;
+  font-weight: 600;
+  color: #6A6B70;
+  margin: 0;
+}
+
+.addButtonContainer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 24px;
+}
+
+.addButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background-color: #184E7F;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-family: 'Inter',-apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.addButton:hover {
+  background-color: #244779;
+}
+
+.addIcon {
+  width: 20px;
+  height: 20px;
+}
+
+
+
+/* Stats Cards */
+.statsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+.statCard {
+  background-color: #FFFFFF;
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid #E5E7EB;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.statValue {
+  font-size: 32px;
+  font-weight: 700;
+  color: #184E7F;
+  margin: 0 0 8px 0;
+}
+
+.statLabel {
+  font-size: 14px;
+  color: #6B7280;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Table */
+.tableContainer {
+  background-color: transparent;
+  border-radius: 0;
+  border: none;
+  overflow: visible;
+  box-shadow: none;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.table thead {
+  background-color: transparent;
+  border-bottom: 1px solid #D1D5DB;
+  border-top: 1px solid #D1D5DB;
+}
+
+.table th {
+  padding: 16px 12px;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 500;
+  color: #184E7F;
+  text-transform: capitalize;
+  letter-spacing: 0;
+  border: none;
+}
+
+.table th:nth-child(1) {
+  width: 60px;
+  padding: 16px 8px;
+}
+
+.table th:nth-child(2) {
+  width: 180px;
+  padding: 16px 12px;
+}
+
+.table th:nth-child(3) {
+  width: 140px;
+  padding: 16px 12px;
+}
+
+.table th:nth-child(4) {
+  width: 200px;
+  padding: 16px 12px;
+}
+
+.table th:nth-child(5) {
+  width: 120px;
+  padding: 16px 12px;
+}
+
+.table th:last-child {
+  border: none;
+  width: auto;
+  padding: 16px 12px;
+}
+
+.table th:first-child {
+  border: none;
+}
+
+.sortableHeader {
+  padding: 16px 24px;
+}
+
+.sortHeaderBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  background: none;
+  border: none;
+  font-size: 12px;
+  font-weight: 500;
+  color: #6B7280;
+  text-transform: capitalize;
+  letter-spacing: 0;
+  cursor: pointer;
+  font-family: 'Inter',-apple-system, BlinkMacSystemFont, sans-serif;
+  transition: color 0.2s ease;
+}
+
+.sortHeaderBtn:hover {
+  color: #374151;
+}
+
+.sortHeaderIcon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+.avatarCell {
+  padding: 20px 8px;
+  text-align: center;
+  width: 60px;
+  vertical-align: middle;
+}
+
+.nameCell {
+  padding: 20px 12px;
+  width: 180px;
+  vertical-align: middle;
+}
+
+.table tbody tr {
+  border-bottom: 1px solid #E5E7EB;
+  transition: background-color 0.2s ease;
+}
+
+.table tbody tr:hover {
+  background-color: transparent;
+}
+
+.table tbody tr:last-child {
+  border-bottom: 1px solid #E5E7EB;
+}
+
+.table td {
+  padding: 20px 12px;
+  font-size: 14px;
+  border: none;
+  color: #1F2937;
+  vertical-align: middle;
+}
+
+.memberInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.memberAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.memberName {
+  font-weight: 600;
+  color: #000000;
+}
+
+.phoneCell {
+  color: #6B7280;
+  font-size: 14px;
+  width: 140px;
+  padding: 20px 12px;
+}
+
+.emailCell {
+  color: #6B7280;
+  width: 200px;
+  padding: 20px 12px;
+}
+
+.roleCell {
+  color: #1F2937;
+  font-size: 14px;
+  font-weight: 500;
+  width: 120px;
+  padding: 20px 12px;
+}
+
+.ticketsCell {
+  font-weight: 600;
+  color: #184E7F;
+}
+
+.statusBadge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.statusBadge.active {
+  background-color: #D1FAE5;
+  color: #065F46;
+}
+
+.statusBadge.inactive {
+  background-color: #FEE2E2;
+  color: #991B1B;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 16px;
+  justify-content: flex-end;
+  width: 100%;
+  padding: 20px 12px;
+}
+
+.actionBtn {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+  padding: 0;
+}
+
+.actionBtn:hover {
+  background-color: #F3F4F6;
+}
+
+.actionIcon {
+  width: 18px;
+  height: 18px;
+}
+
+.editBtn {
+  padding: 8px;
+  background-color: transparent;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.editBtn:hover {
+  background-color: #F3F4F6;
+}
+
+.deleteBtn {
+  padding: 8px;
+  background-color: transparent;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.deleteBtn:hover {
+  background-color: #F3F4F6;
+}
+
+.protectedText {
+  font-size: 13px;
+  color: #9CA3AF;
+  font-weight: 500;
+}
+
+.readOnlyText {
+  font-size: 13px;
+  color: #D1D5DB;
+  font-weight: 500;
+}
+
+.roleBadge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.roleBadge.adminRole {
+  background-color: #FEF3C7;
+  color: #92400E;
+}
+
+.roleBadge.memberRole {
+  background-color: #D1FAE5;
+  color: #065F46;
+}
+
+/* Modal */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  padding: 32px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.modalTitle {
+  font-size: 24px;
+  font-weight: 600;
+  color: #000000;
+  margin: 0 0 8px 0;
+}
+
+.modalDescription {
+  font-size: 14px;
+  color: #6B7280;
+  margin: 0 0 24px 0;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.formGroup {
+  margin-bottom: 20px;
+}
+
+.label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 8px;
+}
+
+.input,
+.select {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 14px;
+  font-family: 'Inter',-apple-system, BlinkMacSystemFont, sans-serif;
+  border: 1px solid #D1D5DB;
+  border-radius: 8px;
+  background-color: #FFFFFF;
+  color: #1F2937;
+}
+
+.input:focus,
+.select:focus {
+  outline: none;
+  border-color: #184E7F;
+}
+
+.modalActions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 32px;
+}
+
+.cancelBtn {
+  padding: 12px 24px;
+  background-color: transparent;
+  color: #6B7280;
+  border: 1px solid #D1D5DB;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family:'Inter',-apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.cancelBtn:hover {
+  background-color: #F3F4F6;
+}
+
+.submitBtn {
+  padding: 12px 24px;
+  background-color: #184E7F;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-family: 'Inter',-apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.submitBtn:hover {
+  background-color: #244779;
+}
+
+/* Delete Confirmation Popup */
+.deleteConfirmOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: transparent;
+  justify-content: flex-end;   /* Moves modal to the right side */
+  align-items: flex-start;     /* You can change to center if you want vertical center */
+  padding: 0px 100px;               /* Controls how close it is to the edges */
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.deleteConfirmModal {
+  position: relative;
+  background-color: #FAFBFC;
+  border-radius: 23px;
+  padding: 20px;
+  width: 410px;
+  height: 110px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  pointer-events: auto;
+  font-family: 'Inter', sans-serif;
+  z-index: 1001;
+}
+
+.deleteConfirmMessage {
+  font-size: 14px;
+  color: #1F2937;
+  margin: 0;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.deleteConfirmActions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.deleteConfirmCancelBtn {
+  padding: 8px 50px;
+  background-color: #FFFFFF;
+  color: #6B7280;
+  border: 1px solid #D1D5DB;
+  border-radius: 15px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.deleteConfirmCancelBtn:hover {
+  background-color: #F9FAFB;
+}
+
+.deleteConfirmBtn {
+  padding: 8px 50px;
+  background-color: #184E7F;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.deleteConfirmBtn:hover {
+  background-color: #244779;
+}
+
+.deletePopup {
+  background-color: #FFFFFF;
+  border-radius: 16px;
+  padding: 32px 40px;
+  width: 90%;
+  max-width: 480px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.deleteMessage {
+  font-size: 18px;
+  color: #1F2937;
+  margin: 0 0 32px 0;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.deleteActions {
+  display: flex;
+  gap: 16px;
+  justify-content: flex-end;
+}
+
+.deleteCancelBtn {
+  padding: 8px 50px;
+  background-color: transparent;
+  color: #9CA3AF;
+  border: none;
+  border-radius: 15px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'Inter',-apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.deleteCancelBtn:hover {
+  color: #6B7280;
+  background-color: #F3F4F6;
+}
+
+.deleteConfirmBtn {
+  padding: 8px 50px;
+  background-color: #184E7F;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 15px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-family: 'Inter',-apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.deleteConfirmBtn:hover {
+  background-color: #184E7F;
+}
+
+
+
+.loadingText {
+  text-align: center;
+  color: #6B7280;
+  font-size: 14px;
+  padding: 40px 20px;
+}
+
+.errorText {
+  text-align: center;
+  color: #DC2626;
+  font-size: 14px;
+  padding: 20px;
+  background-color: #FEE2E2;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.errorMessage {
+  color: #DC2626;
+  font-size: 13px;
+  padding: 12px 16px;
+  background-color: #FEE2E2;
+  border: 1px solid #FECACA;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.emptyText {
+  text-align: center;
+  color: #9CA3AF;
+  font-size: 14px;
+  padding: 40px 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .mainContent {
+    padding: 24px 20px;
+  }
+
+  .statsContainer {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .addButton {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .tableContainer {
+    overflow-x: auto;
+  }
+
+  .table {
+    min-width: 800px;
+  }
+
+  .deletePopup {
+    padding: 24px 28px;
+    max-width: 90%;
+  }
+
+  .deleteMessage {
+    font-size: 16px;
+    margin-bottom: 24px;
+  }
+
+  .deleteActions {
+    flex-direction: column-reverse;
+    gap: 12px;
+  }
+
+  .deleteCancelBtn,
+  .deleteConfirmBtn {
+    width: 100%;
+    justify-content: center;
+  }
+}

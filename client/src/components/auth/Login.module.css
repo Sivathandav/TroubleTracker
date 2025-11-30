@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+.container {
+  display: flex;
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  width: 100%;
+}
+
+.leftPanel {
+  flex: 1;
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 80px;
+  min-height: 100vh;
+  position: relative;
+}
+
+.logoContainer {
+  position: absolute;
+  top: 40px;
+  left: 80px;
+}
+
+.logoImage {
+  height: 40px;
+  width: auto;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logoText {
+  font-size: 28px;
+  font-weight: 600;
+  color: #184E7F;
+}
+
+.formContainer {
+  max-width: 420px;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 40px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 400;
+  color: #676B5F;
+  font-family: 'Poppins', sans-serif;
+}
+
+.input {
+  width: 100%;
+  max-width: 380px;
+  padding: 12px 16px;
+  height: 48px;
+  font-size: 15px;
+  font-family: 'Poppins', sans-serif;
+  border: 1px solid #C3C3C3;
+  border-radius: 6px;
+  background-color: #FFFFFF;
+  color: #000000;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #184E7F;
+  box-shadow: 0 0 0 3px rgba(24, 78, 127, 0.1);
+}
+
+.input:disabled {
+  background-color: #EFF0EC;
+  cursor: not-allowed;
+}
+
+.error {
+  color: #dc3545;
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: -8px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.submitButton {
+  width: 100%;
+  max-width: 380px;
+  padding: 14px;
+  height: 48px;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+  color: #FFFFFF;
+  background-color: #C3C3C3;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 16px;
+}
+
+.submitButton:hover:not(:disabled) {
+  background-color: #A8A8A8;
+}
+
+.submitButton:active:not(:disabled) {
+  background-color: #8F8F8F;
+  transform: scale(0.98);
+}
+
+.submitButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.signupLink {
+  text-align: center;
+  margin-top: 32px;
+  font-size: 14px;
+  color: #666666;
+  font-family: 'Poppins', sans-serif;
+}
+
+.link {
+  color: #184E7F;
+  text-decoration: underline;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.link:hover {
+  color: #244779;
+}
+
+.footer {
+  margin-top: 80px;
+  font-size: 11px;
+  color: #666666;
+  line-height: 1.6;
+  font-family: 'Poppins', sans-serif;
+}
+
+.footerLink {
+  color: #184E7F;
+  text-decoration: underline;
+}
+
+.footerLink:hover {
+  color: #244779;
+}
+
+.rightPanel {
+  width: 541px;
+  flex-shrink: 0;
+  background: #2d3e50;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+.heroImage {
+  width: 100%;
+  height: 100%;
+  background-image: url('../../assets/images/Frame.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .leftPanel {
+    padding: 40px 60px;
+  }
+
+  .formContainer {
+    max-width: 420px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .leftPanel {
+    max-width: 100%;
+    padding: 30px 24px;
+    padding-top: 100px;
+    min-height: 100vh;
+  }
+
+  .rightPanel {
+    display: none;
+  }
+
+  .logoContainer {
+    position: absolute;
+    top: 30px;
+    left: 24px;
+  }
+
+  .title {
+    font-size: 28px;
+    margin-bottom: 32px;
+  }
+
+  .formContainer {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .leftPanel {
+    padding: 24px 20px;
+    padding-top: 90px;
+  }
+
+  .logoContainer {
+    position: absolute;
+    top: 24px;
+    left: 20px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .logoText {
+    font-size: 24px;
+  }
+
+  .input {
+    padding: 12px 14px;
+    font-size: 14px;
+    max-width: 100%;
+  }
+
+  .submitButton {
+    padding: 14px;
+    font-size: 15px;
+    max-width: 100%;
+  }
+}

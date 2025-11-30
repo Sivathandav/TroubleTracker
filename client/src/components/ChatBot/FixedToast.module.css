@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+.fixedToast {
+  position: relative;
+  background-color: #FFFFFF;
+  border-radius: 0px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  border: none;
+  overflow: visible;
+  z-index: 1001;
+  animation: slideUp 0.3s ease;
+  width: 240px;
+  height: 100px;
+  max-width: 90vw;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  padding-top: 24px;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.toastHeader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 24px;
+  background-color: transparent;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.toastAvatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: absolute;
+  top: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.toastCloseBtn {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: auto;
+  height: auto;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0;
+}
+
+.toastCloseBtn:hover {
+  opacity: 0.7;
+}
+
+.toastCloseIcon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+.toastContent {
+  padding: 8px 16px 12px 16px;
+  background-color: #FFFFFF;
+  text-align: left;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.toastText {
+  font-size: 13px;
+  font-weight: 500;
+  color: #425B76;
+  line-height: 1.4;
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  max-width: 100%;
+}

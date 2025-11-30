@@ -1,0 +1,543 @@
+* {
+  font-family: 'Inter', sans-serif !important;
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #FFFFFF;
+  font-family: 'Inter', sans-serif;
+}
+
+.mainContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.header {
+  padding: 32px 90px 24px;
+  background-color: #FFFFFF;
+  flex-shrink: 0;
+}
+
+.pageTitle {
+  font-size: 18px;
+  font-weight: 500;
+  color: #6A6B70;
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.contentWrapper {
+  display: grid;
+  grid-template-columns: 1fr 0.9fr;
+  gap: 32px;
+  padding: 32px 40px;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Left Section - Preview (Fixed) */
+.previewSection {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: sticky;
+  top: 0;
+  height: fit-content;
+  max-height: calc(100vh - 200px);
+}
+
+.previewHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.previewHeader h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #000000;
+  margin: 0;
+}
+
+.previewHeader p {
+  font-size: 13px;
+  color: #6B7280;
+  margin: 0;
+}
+
+.previewArea {
+  border-radius: 12px;
+  padding: 20px 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Preview Wrapper - Vertical Stack */
+.previewWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  padding-top: 20px;
+}
+
+.chatWidgetContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: -40px;
+}
+
+.toastContainerBelow {
+  position: relative;
+  align-self: center;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0;
+}
+
+/* Override toast positioning for ChatBot page */
+.toastContainerBelow :global(.toastPreview) {
+  position: relative !important;
+  bottom: auto !important;
+  left: auto !important;
+  right: auto !important;
+}
+
+/* Right Section - Settings Panel (Scrollable) */
+.settingsPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  align-items: flex-end;
+  width: 100%;
+  max-height: calc(100vh - 200px);
+  padding-right: 8px;
+}
+
+.settingsPanel::-webkit-scrollbar {
+  width: 8px;
+}
+
+.settingsPanel::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.settingsPanel::-webkit-scrollbar-thumb {
+  background: #D1D5DB;
+  border-radius: 4px;
+}
+
+.settingsPanel::-webkit-scrollbar-thumb:hover {
+  background: #9CA3AF;
+}
+
+/* Setting Card */
+.settingCard {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px 10px;
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  border: 1px solid #E5E7EB;
+  box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.08);
+  width: 300px;
+}
+
+.settingLabel {
+  font-size: 12px;
+  font-weight: 600;
+  color: #374151;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+
+
+/* Text Area */
+.textArea {
+  padding: 8px 10px;
+  border: 1px solid #E5E7EB;
+  border-radius: 6px;
+  font-size: 13px;
+  font-family: 'Inter', sans-serif;
+  resize: vertical;
+  min-height: 60px;
+}
+
+.textArea.noResize {
+  resize: none;
+}
+
+.textArea:focus {
+  outline: none;
+  border-color: #184E7F;
+  box-shadow: 0 0 0 2px rgba(24, 78, 127, 0.1);
+}
+
+.textArea.disabled {
+  background-color: #F9FAFB;
+  color: #6B7280;
+  cursor: not-allowed;
+}
+
+.textArea.disabled:focus {
+  border-color: #E5E7EB;
+  box-shadow: none;
+}
+
+.customWideInput {
+  width: 100%;
+  min-height: 20px;
+  padding-right: 20px;
+  font-family: 'Inter', sans-serif !important;
+}
+
+/* Text Area Wrapper */
+.textAreaWrapper {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+}
+
+.editIconInside {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  pointer-events: auto;
+}
+
+.editIconInside:hover {
+  opacity: 1;
+}
+
+.editButtonInside {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  padding: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.editButtonInside:hover {
+  background-color: rgba(24, 78, 127, 0.1);
+}
+
+.editButtonInside:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+/* Form Fields Container */
+.formFieldsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.formFieldRow {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 10px;
+  background-color: #F9FAFB;
+  border-radius: 6px;
+  border: 1px solid #E5E7EB;
+}
+
+.fieldInput {
+  padding: 6px 8px;
+  border: 1px solid #E5E7EB;
+  border-radius: 4px;
+  font-size: 12px;
+  font-family: 'Inter', sans-serif;
+}
+
+.fieldInput:focus {
+  outline: none;
+  border-color: #184E7F;
+  box-shadow: 0 0 0 2px rgba(24, 78, 127, 0.1);
+}
+
+/* Timer Input Group */
+.timerInputGroup {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.timerField {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.timerField label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #6B7280;
+}
+
+.timerInput {
+  padding: 6px 8px;
+  border: 1px solid #E5E7EB;
+  border-radius: 4px;
+  font-size: 13px;
+  text-align: center;
+}
+
+.timerInput:focus {
+  outline: none;
+  border-color: #184E7F;
+  box-shadow: 0 0 0 2px rgba(24, 78, 127, 0.1);
+}
+
+/* Button Group */
+.buttonGroup {
+  display: flex;
+  gap: 10px;
+  padding: 16px 20px;
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  border: 1px solid #E5E7EB;
+  box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.08);
+}
+
+.saveButton {
+  flex: 1;
+  padding: 10px 16px;
+  background-color: #184E7F;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.saveButton:hover {
+  background-color: #244779;
+}
+
+.resetButton {
+  flex: 1;
+  padding: 10px 16px;
+  background-color: #FFFFFF;
+  color: #184E7F;
+  border: 1px solid #184E7F;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.resetButton:hover {
+  background-color: #F3F4F6;
+}
+
+/* Missed Chat Timer - Scroll Wheel Style */
+.timerCard {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  padding: 12px 12px;
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  border: 1px solid #E5E7EB;
+  box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.08);
+  width: 300px;
+  overflow: visible;
+  min-height: 170px;
+  align-items: flex-start;
+}
+
+/* Timer Content Wrapper */
+.timerContent {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.timerTitle {
+  font-size: 11px;
+  font-weight: 600;
+  color: #374151;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0;
+  display: block;
+  margin-bottom: 3px;
+  font-family: 'Inter', sans-serif;
+  line-height: 1;
+}
+
+/* Timer Display Rows */
+.timerDisplayRow {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 12px;
+  padding: 2px 0;
+  font-size: 16px;
+  font-weight: 300;
+  color: #6B7280;
+  font-family: 'Inter', sans-serif;
+  line-height: 1;
+}
+
+.timerDisplayValue {
+  min-width: 40px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 300;
+  color: #6B7280;
+  line-height: 1;
+}
+
+/* Timer Input Row */
+.timerInputRow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  background-color: #EDF3F6;
+  border-radius: 8px;
+  margin: 2px 0;
+}
+
+.timerInputField {
+  width: 42px;
+  padding: 2px 2px;
+  border: none;
+  background-color: transparent;
+  font-size: 20px;
+  font-weight: 600;
+  color: #000000;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  outline: none;
+  line-height: 1;
+}
+
+.timerInputField:focus {
+  outline: none;
+}
+
+.timerInputField::-webkit-outer-spin-button,
+.timerInputField::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+.timerInputField[type=number] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.timerSeparatorText {
+  font-size: 20px;
+  font-weight: 600;
+  color: #000000;
+  margin: 0 1px;
+  font-family: 'Inter', sans-serif;
+  line-height: 1;
+}
+
+.timerSaveButton {
+  background-color: #1D3B78;
+  color: #FFFFFF;
+  padding: 8px 20px;
+  border-radius: 20px;
+  border: none;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+  align-self: flex-end;
+  margin-top: auto;
+}
+
+.timerSaveButton:hover {
+  background-color: #152d5f;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .contentWrapper {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    overflow-y: auto;
+  }
+
+  .previewSection {
+    position: static;
+    max-height: none;
+  }
+
+  .settingsPanel {
+    max-height: none;
+    overflow-y: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .contentWrapper {
+    padding: 20px;
+    grid-template-columns: 1fr;
+  }
+
+  .previewArea {
+    min-height: 400px;
+  }
+
+  .timerInputGroup {
+    grid-template-columns: 1fr;
+  }
+
+  .previewSection {
+    position: static;
+    max-height: none;
+  }
+
+  .settingsPanel {
+    max-height: none;
+  }
+}
