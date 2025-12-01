@@ -1,6 +1,14 @@
-# Hubly CRM
+# TroubleTracker - Ticketing System
 
-A full-stack CRM application built with MERN stack (MongoDB, Express.js, React.js, Node.js).
+A full-stack ticketing and team management system built with MERN stack (MongoDB, Express.js, React.js, Node.js).
+
+## 🔐 Login Credentials
+
+| Name          |      Email        | Password            |    Role     |
+|---------------|-------------------|---------------------|-------------|
+| Grey          | admin@test.com    | Super@1             | Admin       |
+| Sarah Johnson | sarah@company.com | sarah@company.com   | Team Member |
+| Mike Chen     | mike@company.com  | mike@company.com    | Team Member |
 
 ## Project Structure
 
